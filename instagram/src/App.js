@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import './App.scss';
+import Proptypes from 'prop-types';
 
+import './App.scss';
 import dummyData from './dummy-data';
+import PostContainer from './components/PostContainer/PostContainer';
 
 class App extends Component {
   constructor(props) {
@@ -25,14 +27,8 @@ class App extends Component {
           <i className="far fa-user"></i>
 
           <div className="logo">Instagram</div>
-
-          <div>
-            {posts.map((post) => {
-              return <p key={post.id}>{post.username}</p>;
-            })}
-          </div>
-
         </header>
+        <PostContainer posts={posts} />
       </div>
     );
   }
