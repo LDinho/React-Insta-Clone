@@ -1,14 +1,14 @@
 import React from 'react';
-import Proptypes from 'prop-types';
+// import Proptypes from 'prop-types';
 
 import './PostContainer.scss';
+import CommentSection from '../CommentSection/CommentSection';
 
 const PostContainer = ({posts}) => {
-  console.log('PostContainer:', posts)
 
   return (
     <div className="post-container">
-      {posts.map(({id, thumbnailUrl, username, imageUrl, likes, timestamp}) => {
+      {posts.map(({id, thumbnailUrl, username, imageUrl, likes, comments, timestamp}) => {
         return (
             <div key={id} className="post-wrapper">
               <div className="post-header-wrapper">
@@ -18,7 +18,7 @@ const PostContainer = ({posts}) => {
                 <div className="username-mg"><p>{username}</p></div>
               </div>
               <div className="image-post-wrapper">
-                <img src={imageUrl} alt="image-post"/>
+                <img src={imageUrl} alt="post"/>
               </div>
               <div className="comment-icon-wrapper">
                 <i className="far fa-heart"></i>
@@ -28,6 +28,7 @@ const PostContainer = ({posts}) => {
                 <div>{likes}</div>
                 <div><p>likes</p></div>
               </div>
+              <CommentSection comments={comments} timestamp={timestamp} />
             </div>
         )
       })}

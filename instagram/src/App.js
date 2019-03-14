@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Proptypes from 'prop-types';
+// import Proptypes from 'prop-types';
 
 import './App.scss';
 import dummyData from './dummy-data';
@@ -18,7 +18,7 @@ class App extends Component {
     const {posts} = this.state;
     console.log('POSTS DATA:', posts);
     return (
-      <div className="App">
+      <main className="App">
         <header className="App-header">
 
           <i className="fab fa-instagram"></i>
@@ -29,7 +29,7 @@ class App extends Component {
           <div className="logo">Instagram</div>
         </header>
         <PostContainer posts={posts} />
-      </div>
+      </main>
     );
   }
 }
