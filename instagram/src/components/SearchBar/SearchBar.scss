@@ -1,0 +1,60 @@
+@import '../../sass/variables.scss';
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  margin-top: 20px;
+  margin-bottom: 14px;
+
+  input {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    height: 34px;
+    width: 100%;
+    padding: 12%;
+
+  }
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+.input {
+  position: relative;
+  width: 180px;
+}
+
+.fas {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 18px;
+  left: 8px;
+}
+
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+
+}
+
+.fab-insta-wrapper {
+
+}
+
+.logo {
+  border-left: 1px solid gray;
+  font-family: $logoFont;
+  font-size: $ml;
+  margin-left: 20px;
+  padding-left: 20px;
+
+}
+
+.header-icons-wrapper {
+  display: flex;
+}

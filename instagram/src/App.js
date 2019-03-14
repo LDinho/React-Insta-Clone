@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
+import SearchBar from './components/SearchBar/SearchBar';
 
 class App extends Component {
   constructor(props) {
@@ -19,15 +20,7 @@ class App extends Component {
     console.log('POSTS DATA:', posts);
     return (
       <main className="App">
-        <header className="App-header">
-
-          <i className="fab fa-instagram"></i>
-          <i className="far fa-compass"></i>
-          <i className="far fa-heart"></i>
-          <i className="far fa-user"></i>
-
-          <div className="logo">Instagram</div>
-        </header>
+        <SearchBar />
         <PostContainer posts={posts} />
       </main>
     );
