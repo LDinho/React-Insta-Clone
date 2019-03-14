@@ -19,6 +19,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
 
+          <i className="fab fa-instagram"></i>
+          <i className="far fa-compass"></i>
+          <i className="far fa-heart"></i>
+          <i className="far fa-user"></i>
+
+          <div className="logo">Instagram</div>
+
           <div>
             {posts.map((post) => {
               return <p key={post.id}>{post.username}</p>;

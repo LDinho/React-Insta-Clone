@@ -1,0 +1,42 @@
+/* Typography */
+
+//Roboto & Open Sans
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,900|Roboto:400,500,700');
+// Norican
+@import url('https://fonts.googleapis.com/css?family=Norican');
+
+$logoFont: 'Norican', cursive, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headingsFont: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$defaultFont: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+/* Font Sizes */
+$xxs: 1rem;
+$xs: 1.3rem;
+$s: 1.6rem;
+$sm: 1.8rem;
+$m: 2rem;
+$ml: 3rem;
+$l: 4rem;
+$xl: 5rem;
+$xxl: 6rem;
+
+
+/* Color Palette */
+$primaryBgShading: #F5F8FA;
+$secondaryBgShading: #7F969F;
+//$accent: #ED5D28;
+$emphasis: #03100D;
+$darkText: #595959;
+$lightText: #FFFFFF;
+
+
+/* Color Scheme */
+$logoColor: $lightText;
+//$headerBgColor: $lightText;
+//$defaultFontColor: $darkText;
+$containerBgColor: $primaryBgShading;
+
+
+/* Media breakpoints */
+$phone: "(max-width: 600px)";
