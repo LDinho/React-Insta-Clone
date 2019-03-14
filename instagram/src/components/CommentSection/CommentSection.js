@@ -17,6 +17,10 @@ class CommentSection extends Component {
       <>
         <Comment comments={comments}/>
         <time className="timestamp">{timestamp}</time>
+
+        <div className="comment-input">
+          <input type="text" placeholder="add comment here..."/>
+        </div>
       </>
     )
   }

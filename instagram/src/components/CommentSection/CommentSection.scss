@@ -1,3 +1,5 @@
+@import '../../sass/variables.scss';
+
 .comments-section {
   margin-top: 12px;
 }
@@ -20,3 +22,25 @@ time {
   margin-bottom: 12px;
 
 }
+
+.comment-input {
+  height: 60px;
+  margin: 24px 20px;
+
+  input {
+    //border: 1px solid lightgray;
+    background-color: $primaryBgShading;
+    border: none;
+    border-top: 1px solid lightgray;
+    padding: 5%;
+    font-size: 1.8rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  input::placeholder {
+    color: lightgray;
+    text-align: start;
+  }
+}
+
