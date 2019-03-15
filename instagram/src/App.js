@@ -10,11 +10,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: dummyData,
+      posts: [],
 
     };
 
   };
+
+  componentDidMount() {
+
+    this.setState({
+      posts: dummyData,
+    })
+
+  }
+
   render() {
     const {posts} = this.state;
     console.log('POSTS DATA:', posts);
