@@ -15,6 +15,12 @@ class Post extends Component {
 
   }
 
+  onClickHandler = () => {
+    this.setState({
+      likes: this.state.likes + 1,
+    })
+  }
+
   render() {
     const {thumbnailUrl, username, imageUrl, comments, timestamp} = this.props.post;
     const {likes} = this.state;
