@@ -54,8 +54,7 @@ class CommentSection extends Component {
 
     return (
       <section className="comments-section">
-        {comments.map((comment) => console.log('Comments:', comment) ||
-          <Comment key={comment.id} comment={comment} />)}
+        {comments.map((comment) => <Comment key={comment.id} comment={comment} />)}
 
         <time className="timestamp">{timestamp}</time>
 
