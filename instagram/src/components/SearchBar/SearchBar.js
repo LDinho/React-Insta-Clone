@@ -14,13 +14,21 @@ class SearchBar extends Component {
 
   handleInputChange = (event) => {
     console.log('EVENT', event.target.value)
+    const searchQuery = event.target.value;
+
     this.setState({
-      [event.target.name]: event.target.value,
+      searchQuery: searchQuery,
     });
+
+    if (searchQuery) return;
+
+    // When there's no search value or the clear button is pressed in the input field
+    this.props.handleSubmit(searchQuery);
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    alert('HELLLEEJL')
     this.props.handleSubmit(this.state.searchQuery);
   }
 

@@ -10,9 +10,7 @@ class CommentSection extends Component {
   constructor (props) {
     super(props);
 
-    const {comments} = this.props;
     this.state = {
-      comments,
       comment: '',
 
     }
@@ -38,19 +36,18 @@ class CommentSection extends Component {
     // this.setState({
     //   comments: [...this.state.comments, newComment],
     // })
+    const updatedComments = [...this.props.comments, newComment];
 
-    this.setState((prevState) => {
-      return {
-        comments: [...prevState.comments, newComment],
-        comment: '',
-      }
+    this.props.onNewCommentAdd(updatedComments);
+
+
+    this.setState({
+      comment: '',
     })
-
   }
 
   render() {
-    const {timestamp} = this.props;
-    const {comments} = this.state;
+    const {timestamp, comments} = this.props;
 
     return (
       <section className="comments-section">

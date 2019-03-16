@@ -24,6 +24,7 @@ class Post extends Component {
   render() {
     const {thumbnailUrl, username, imageUrl, comments, timestamp} = this.props.post;
     const {likes} = this.state;
+    const {onNewCommentAdd} = this.props;
 
     return (
       <div className="post-wrapper">
@@ -44,7 +45,10 @@ class Post extends Component {
           <div>{likes}</div>
           <div><p>likes</p></div>
         </div>
-        <CommentSection comments={comments} timestamp={timestamp} />
+        <CommentSection comments={comments}
+                        timestamp={timestamp}
+                        onNewCommentAdd={onNewCommentAdd}
+        />
       </div>
     )
   }

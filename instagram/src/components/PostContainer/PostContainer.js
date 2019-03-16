@@ -4,13 +4,23 @@ import React from 'react';
 import './PostContainer.scss';
 import Post from './Post';
 
-const PostContainer = ({posts}) => {
+const PostContainer = ({posts, onNewCommentAdd}) => {
 
   return (
     <div className="post-container">
       {posts.map((post) => {
         return (
-            <Post key={post.id} post={post}/>
+            <Post key={post.id}
+                  post={post}
+                  onNewCommentAdd={(updatedComments) => {
+                    onNewCommentAdd({
+                      postId: post.id,
+                      updatedComments: updatedComments,
+                    })
+
+                  }}
+
+            />
         )
       })}
     </div>
