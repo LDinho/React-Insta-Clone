@@ -24,12 +24,25 @@ class App extends Component {
 
   }
 
+  handleSearch =(searchQuery) => {
+    console.log('SEARCHQUERY:', searchQuery);
+
+    const searchResults = this.state.posts.filter((post) => {
+      return post.username === searchQuery;
+    })
+    console.log('FILTER', searchResults )
+
+    this.setState({
+      posts: searchResults,
+    })
+  }
+
   render() {
     const {posts} = this.state;
     console.log('POSTS DATA:', posts);
     return (
       <main className="App">
-        <SearchBar />
+        <SearchBar handleSubmit={this.handleSearch} />
         <PostContainer posts={posts} />
       </main>
     );

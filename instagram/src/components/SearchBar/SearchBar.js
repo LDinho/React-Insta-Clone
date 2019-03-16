@@ -1,32 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import Proptypes from 'prop-types';
 
 import './SearchBar.scss';
 
-const SearchBar = () => {
+class SearchBar extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <header className="App-header">
+    this.state = {
+      searchQuery: '',
+    }
+  }
 
-      <div className="logo-wrapper">
-        <div className="fab-insta-wrapper"><i className="fab fa-instagram"></i></div>
-        <div className="logo">Instagram</div>
-      </div>
+  handleInputChange = (event) => {
+    console.log('EVENT', event.target.value)
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
 
-      <div className="input">
-        <i className="fas fa-search"></i>
-        <input type="search" placeholder="search"/>
-      </div>
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.handleSubmit(this.state.searchQuery);
+  }
 
-      <div className="header-icons-wrapper">
-        <div><i className="far fa-compass"></i></div>
-        <div><i className="far fa-heart"></i></div>
-        <div><i className="far fa-user"></i></div>
-      </div>
+  render () {
+    return (
+      <header className="App-header">
 
-    </header>
+        <div className="logo-wrapper">
+          <div className="fab-insta-wrapper"><i className="fab fa-instagram"></i></div>
+          <div className="logo">Instagram</div>
+        </div>
 
-  )
+        <form className="input" onSubmit={this.handleSubmit}>
+          <i className="fas fa-search"></i>
+          <input name="searchQuery"
+                 type="search"
+                 placeholder="search"
+                 onChange={this.handleInputChange}
+                 value={this.state.searchQuery}
+          />
+        </form>
+
+        <div className="header-icons-wrapper">
+          <div><i className="far fa-compass"></i></div>
+          <div><i className="far fa-heart"></i></div>
+          <div><i className="far fa-user"></i></div>
+        </div>
+
+      </header>
+
+    )
+
+  }
 
 }
 
