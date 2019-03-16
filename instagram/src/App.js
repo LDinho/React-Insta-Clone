@@ -32,6 +32,8 @@ class App extends Component {
     })
     console.log('FILTER', searchResults )
 
+    if (searchResults.length === 0) return;
+
     this.setState({
       posts: searchResults,
     })
