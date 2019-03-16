@@ -32,7 +32,6 @@ class CommentSection extends Component {
       username: fakeUsers[fakeUserRandomIndex],
       text: this.state.comment,
     }
-
     // this.setState({
     //   comments: [...this.state.comments, newComment],
     // })

@@ -5,25 +5,14 @@ import '../CommentSection/CommentSection.scss';
 import CommentSection from '../CommentSection/CommentSection';
 
 class Post extends Component {
-  constructor(props) {
-    super(props);
-
-    const {likes} = this.props.post;
-    this.state = {
-      likes,
-    }
-
-  }
 
   onClickHandler = () => {
-    this.setState({
-      likes: this.state.likes + 1,
-    })
+    const {post: {likes}, onNewLike} = this.props;
+    onNewLike(likes + 1);
   }
 
   render() {
-    const {thumbnailUrl, username, imageUrl, comments, timestamp} = this.props.post;
-    const {likes} = this.state;
+    const {thumbnailUrl, username, imageUrl, comments, timestamp, likes} = this.props.post;
     const {onNewCommentAdd} = this.props;
 
     return (

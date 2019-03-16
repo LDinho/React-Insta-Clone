@@ -32,24 +32,37 @@ class App extends Component {
       return post.id === commentsData.postId;
     });
 
-    const foundPost = this.state.posts[foundPostIndex];
+    // const clonedPosts = [...this.state.posts]
 
+    const foundPost = this.state.posts[foundPostIndex];
     foundPost.comments = commentsData.updatedComments;
 
     const updatedPosts = [...this.state.posts];
-
     console.log('UpdatedPOst:', updatedPosts);
 
     this.setState({
       posts: updatedPosts,
-    })
+    });
+  }
+
+  handleLike = (likeData) => {
+    const foundPostIndex = this.state.posts.findIndex((post) => {
+      return post.id === likeData.postId;
+    });
+
+    const foundPost = this.state.posts[foundPostIndex];
+    foundPost.likes = likeData.newLikeValue;
+
+    const updatedPosts = [...this.state.posts];
+    this.setState({
+      posts: updatedPosts,
+    });
   }
 
   handleSearch =(searchQuery) => {
     console.log('SEARCHQUERY:', searchQuery);
 
     this.setState({searchQuery: searchQuery});
-
   }
 
   render() {
@@ -65,7 +78,10 @@ class App extends Component {
     return (
       <main className="App">
         <SearchBar handleSubmit={this.handleSearch} />
-        <PostContainer posts={maybeFilteredPosts} onNewCommentAdd={this.handleCommentAdd} />
+        <PostContainer posts={maybeFilteredPosts}
+                       onNewCommentAdd={this.handleCommentAdd}
+                       onNewLike={this.handleLike}
+        />
       </main>
     );
   }
