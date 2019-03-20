@@ -77,7 +77,7 @@ class App extends Component {
 
     return (
       <main className="App">
-        <SearchBar handleSubmit={this.handleSearch} />
+        <SearchBar onSearchInputChange={this.handleSearch} />
         <PostContainer posts={maybeFilteredPosts}
                        onNewCommentAdd={this.handleCommentAdd}
                        onNewLike={this.handleLike}
