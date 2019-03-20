@@ -67,7 +67,7 @@ class PostPage extends Component {
     console.log('POSTS DATA:', posts);
 
     const filteredPosts = posts.filter((post) => {
-      return post.username === searchQuery;
+      return post.username.includes(searchQuery);
     });
 
     const maybeFilteredPosts = filteredPosts.length === 0 ? posts : filteredPosts;
