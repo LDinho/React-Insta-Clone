@@ -39,7 +39,6 @@ class CommentSection extends Component {
 
     this.props.onNewCommentAdd(updatedComments);
 
-
     this.setState({
       comment: '',
     })

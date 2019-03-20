@@ -35,8 +35,16 @@
   /*}*/
 /*}*/
 
-.App {
+.app {
   max-width: 750px;
   margin: 0 auto;
   //text-align: center;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  background-color: #F5F8FA;
+  top: 0;
+  border-bottom: 1px solid lightgray;
 }

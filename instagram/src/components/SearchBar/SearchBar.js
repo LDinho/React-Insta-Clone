@@ -17,7 +17,7 @@ class SearchBar extends Component {
 
   render () {
     return (
-      <header className="App-header">
+      <header className="app-header">
         <div className="logo-wrapper">
           <div className="fab-insta-wrapper"><i className="fab fa-instagram" /></div>
           <div className="logo">Instagram</div>
