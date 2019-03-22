@@ -37,6 +37,7 @@ class Post extends Component {
         <CommentSection comments={comments}
                         timestamp={timestamp}
                         onNewCommentAdd={onNewCommentAdd}
+                        currentUser={this.props.currentUser}
         />
       </div>
     )

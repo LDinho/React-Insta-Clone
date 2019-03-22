@@ -4,7 +4,7 @@ import React from 'react';
 import './PostContainer.scss';
 import Post from './Post';
 
-const PostContainer = ({posts, onNewCommentAdd, onNewLike}) => {
+const PostContainer = ({currentUser, posts, onNewCommentAdd, onNewLike}) => {
 
   return (
     <div className="post-container">
@@ -24,6 +24,7 @@ const PostContainer = ({posts, onNewCommentAdd, onNewLike}) => {
                       newLikeValue: newLikeValue,
                     })
                   }}
+                  currentUser={currentUser}
 
             />
         )

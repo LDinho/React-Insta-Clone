@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import './CommentSection.scss';
 import Comment from './Comment';
 
-const fakeUsers = ['dude2', 'dodo5', 'prince4', 'Johnny', 'max', 'golden'];
+// const fakeUsers = ['dude2', 'dodo5', 'prince4', 'Johnny', 'max', 'golden'];
 
 class CommentSection extends Component {
   constructor (props) {
@@ -24,12 +24,11 @@ class CommentSection extends Component {
 
   addNewComment = (event) => {
     event.preventDefault();
-
-    const fakeUserRandomIndex = Math.floor(Math.random() * Math.floor(fakeUsers.length));
+    // const fakeUserRandomIndex = Math.floor(Math.random() * Math.floor(fakeUsers.length));
 
     const newComment = {
       id: Date.now(),
-      username: fakeUsers[fakeUserRandomIndex],
+      username: this.props.currentUser,
       text: this.state.comment,
     }
     // this.setState({

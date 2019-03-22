@@ -82,6 +82,7 @@ class PostPage extends Component {
           <PostContainer posts={maybeFilteredPosts}
                        onNewCommentAdd={this.handleCommentAdd}
                        onNewLike={this.handleLike}
+                         currentUser={this.props.currentUser}
           />
         </main>
       </>
