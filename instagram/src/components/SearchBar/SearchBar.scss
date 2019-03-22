@@ -59,4 +59,9 @@ input::placeholder {
 
 .header-icons-wrapper {
   display: flex;
+
+  p {
+    cursor: pointer;
+    margin-left: 10px;
+  }
 }

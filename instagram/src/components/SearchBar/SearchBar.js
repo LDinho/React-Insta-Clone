@@ -16,6 +16,7 @@ class SearchBar extends Component {
   }
 
   render () {
+
     return (
       <header className="app-header">
         <div className="logo-wrapper">
@@ -36,6 +37,7 @@ class SearchBar extends Component {
           <div><i className="far fa-compass" /></div>
           <div><i className="far fa-heart" /></div>
           <div><i className="far fa-user" /></div>
+          <p className="logout" onClick={this.props.onLogout}>LogOut</p>
         </div>
       </header>
     )

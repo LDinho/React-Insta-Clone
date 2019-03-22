@@ -34,15 +34,21 @@ const withAuthenticate = (LoggedInComponent) => (LoggedOutComponent) => {
       })
     }
 
+    handleLogout = () => {
+      this.setState({
+        loggedIn: false,
+      })
+    }
+
     render() {
       const {currentUser, loggedIn, showCreateAccountMessage} = this.state;
 
       if (loggedIn) {
-        return <LoggedInComponent currentUser={currentUser}/>;
+        return <LoggedInComponent currentUser={currentUser} onLogout={this.handleLogout}/>;
       }
 
       return (
-          <LoggedOutComponent showCreateAccountMessage={showCreateAccountMessage} onLogin={this.handleLogin} />
+          <LoggedOutComponent showCreateAccountMessage={showCreateAccountMessage} onLogin={this.handleLogin}/>
       );
     }
   };

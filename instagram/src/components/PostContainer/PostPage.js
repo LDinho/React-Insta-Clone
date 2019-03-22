@@ -62,6 +62,10 @@ class PostPage extends Component {
     this.setState({searchQuery: searchQuery});
   }
 
+  logOut = () => {
+    this.props.onLogout();
+  }
+
   render() {
     const {posts, searchQuery} = this.state;
     console.log('POSTS DATA:', posts);
@@ -75,7 +79,7 @@ class PostPage extends Component {
     return (
       <>
         <nav className="nav">
-          <SearchBar onSearchInputChange={this.handleSearch} />
+          <SearchBar onSearchInputChange={this.handleSearch} onLogout={this.logOut} />
         </nav>
 
         <main className="app">
