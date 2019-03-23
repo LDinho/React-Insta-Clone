@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import '../CommentSection/CommentSection.scss';
 import CommentSection from '../CommentSection/CommentSection';
@@ -96,6 +96,12 @@ class Post extends Component {
       </PostWrapper>
     )
   }
+}
+
+Post.propTypes = {
+  comments: PropTypes.array,
+  likes: PropTypes.number,
+  currentUser: PropTypes.string,
 }
 
 export default Post;
