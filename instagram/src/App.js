@@ -10,11 +10,6 @@ import withAuthenticate from './components/authentication/withAuthenticate';
 const ComponentFromWithAuthenticate = withAuthenticate(PostPage)(LoginPage);
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  };
 
   render() {
 

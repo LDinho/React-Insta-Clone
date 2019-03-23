@@ -40,13 +40,7 @@ class LoginPage extends Component {
   }
 
   login = () => {
-//     const accounts = localStorage.getItem('accounts');
-// console.log('USER:', accounts);
-//
-//     const accountsObject = JSON.parse(accounts);
-
     this.props.onLogin(this.state.username.toLowerCase());
-
   }
 
   render() {
@@ -71,7 +65,7 @@ class LoginPage extends Component {
           <label htmlFor="password">Password</label>
           <input className="password"
                  id="password"
-                 type="text"
+                 type="password"
                  name="password"
                  placeholder="Enter password"
                  value={this.state.password}
