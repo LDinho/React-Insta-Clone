@@ -3,6 +3,60 @@ import React, { Component } from 'react';
 
 import '../CommentSection/CommentSection.scss';
 import CommentSection from '../CommentSection/CommentSection';
+import styled from 'styled-components'
+
+
+const PostWrapper = styled.div`
+  border: 1px solid lightgray;
+  margin-bottom: 40px;
+  
+  .post-header-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .avatar-wrapper {
+    width: 8%;
+    margin-left: 20px;
+  
+    img {
+      border-radius: 50%;
+    }
+  }
+  
+  .username-mg {
+    margin-left: 16px;
+  
+    p {
+      font-weight: 600;
+    }
+  }
+  
+  .image-post-wrapper {
+    margin-top: 16px;
+  }
+  
+  .comment-icon-wrapper {
+    margin-top: 10px;
+  
+    .fa-heart {
+      cursor: pointer;
+    }
+  }
+  
+  .likes-wrapper {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-left: 20px;
+  
+    p {
+      margin-left: 8px;
+  
+    }
+  }
+`;
 
 class Post extends Component {
 
@@ -16,7 +70,7 @@ class Post extends Component {
     const {onNewCommentAdd} = this.props;
 
     return (
-      <div className="post-wrapper">
+      <PostWrapper>
         <div className="post-header-wrapper">
           <div className="avatar-wrapper">
             <img src={thumbnailUrl} alt="avatar"/>
@@ -39,8 +93,9 @@ class Post extends Component {
                         onNewCommentAdd={onNewCommentAdd}
                         currentUser={this.props.currentUser}
         />
-      </div>
+      </PostWrapper>
     )
   }
 }
+
 export default Post;
