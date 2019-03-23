@@ -1,7 +1,59 @@
 import React, { Component } from 'react';
 // import Proptypes from 'prop-types';
 
-import './SearchBar.scss';
+// import './SearchBar.scss';
+import styled from 'styled-components';
+
+const Header = styled.header`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+  
+  form {
+    position: relative;
+    
+    .fas {
+      font-size: 1.2rem;
+      position: absolute;
+      top: 18px;
+      left: 8px;
+    }
+  }
+  input {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    height: 34px;
+    width: 300px;
+    padding: 8%;
+  }
+  input::placeholder {
+    text-align: center;
+  }
+`;
+
+const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  
+  .logo {
+    border-left: 1px solid gray;
+    font-family: 'Norican', cursive, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 3rem;
+    margin-left: 20px;
+    padding-left: 20px;
+  }
+`;
+
+const HeaderIconsWrapper = styled.div`
+  display: flex;
+  
+  p {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+`;
 
 class SearchBar extends Component {
 
@@ -18,11 +70,11 @@ class SearchBar extends Component {
   render () {
 
     return (
-      <header className="app-header">
-        <div className="logo-wrapper">
+      <Header>
+        <LogoWrapper>
           <div className="fab-insta-wrapper"><i className="fab fa-instagram" /></div>
           <div className="logo">Instagram</div>
-        </div>
+        </LogoWrapper>
 
         <form className="input" onSubmit={this.handleSubmit}>
           <i className="fas fa-search" />
@@ -33,13 +85,13 @@ class SearchBar extends Component {
           />
         </form>
 
-        <div className="header-icons-wrapper">
+        <HeaderIconsWrapper>
           <div><i className="far fa-compass" /></div>
           <div><i className="far fa-heart" /></div>
           <div><i className="far fa-user" /></div>
           <p className="logout" onClick={this.props.onLogout}>LogOut</p>
-        </div>
-      </header>
+        </HeaderIconsWrapper>
+      </Header>
     )
   }
 }
