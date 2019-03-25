@@ -1,0 +1,67 @@
+// General Styles
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body * {
+  font-family: $defaultFont;
+}
+
+body {
+  background: $primaryBgShading;
+  font-size: $s;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $headingsFont;
+}
+
+h1 {
+  font-size: $ml;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: $m;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: $s;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: $xs;
+  font-weight: bold;
+}
+
+p {
+  font-size: $s;
+  line-height: 1.4;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+.fab {
+  font-size: 2.5rem;
+}
+
+.far {
+  font-size: 2.5rem;
+  margin-left: 20px;
+  margin-bottom: 12px;
+}

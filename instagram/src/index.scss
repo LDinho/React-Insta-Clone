@@ -1,0 +1,11 @@
+// External stylesheets
+@import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css');
+//@import url('https://use.fontawesome.com/releases/v5.7.2/js/all.js');
+
+// Variables and Mixins
+@import './sass/variables.scss';
+@import './sass/mixins.scss';
+
+// Reset and Global Styles
+@import './sass/reset.scss';
+@import './sass/global.scss';
